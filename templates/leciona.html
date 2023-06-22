@@ -19,7 +19,7 @@
     {% for leciona in lecionas %}
         <li>
             Professor ID: {{ leciona[0] }} - Disciplina ID: {{ leciona[1] }} - Turma ID: {{ leciona[2] }}
-            <a href="/remover_leciona/{{ leciona[0] }}/{{ leciona[1] }}/{{ leciona[2] }}">Remover</a>
+            <a href="/remover_leciona/{{ leciona[0] }}/{{ leciona[1] }}/{{ leciona[2] }}">Remover</a><br>
             <form action="/atualizar_leciona/{{ leciona[0] }}/{{ leciona[1] }}/{{ leciona[2] }}" method="post" style="display: inline-block;">
                 <input type="text" name="professor_id" placeholder="Novo ID do Professor" required>
                 <input type="text" name="disciplina_id" placeholder="Novo ID da Disciplina" required>

@@ -22,7 +22,7 @@
     {% for disciplina in disciplinas %}
         <li>
             {{ disciplina[1] }} - Carga Horária: {{ disciplina[2] }}
-            <a href="/remover_disciplina/{{ disciplina[0] }}">Remover</a>
+            <a href="/remover_disciplina/{{ disciplina[0] }}">Remover</a><br>
             <form action="/atualizar_disciplina/{{ disciplina[0] }}" method="post" style="display: inline-block;">
                 <input type="text" name="nome" placeholder="Nome" required>
                 <input type="number" name="carga_horaria" placeholder="Carga Horária" required>

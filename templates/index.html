@@ -31,7 +31,7 @@
     {% for aluno in alunos %}
         <li>
             {{ aluno[1] }} ({{ aluno[2] }}) - {{ aluno[3] }} - {{ aluno[4] }} - {{ aluno[5] }}
-            <a href="/remover/{{ aluno[0] }}">Remover</a>
+            <a href="/remover/{{ aluno[0] }}">Remover</a><br>
             <form action="/atualizar/{{ aluno[0] }}" method="post" style="display: inline-block;">
                 <input type="text" name="nome" placeholder="Nome" required>
                 <input type="email" name="email" placeholder="Email" required>

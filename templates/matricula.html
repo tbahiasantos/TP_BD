@@ -18,7 +18,7 @@
     {% for matricula in matriculas %}
         <li>
             Aluno ID: {{ matricula[0] }} - Disciplina ID: {{ matricula[1] }}
-            <a href="/remover_matricula/{{ matricula[0] }}/{{ matricula[1] }}">Remover</a>
+            <a href="/remover_matricula/{{ matricula[0] }}/{{ matricula[1] }}">Remover</a><br>
             <form action="/atualizar_matricula/{{ matricula[0] }}/{{ matricula[1] }}" method="post" style="display: inline-block;">
                 <input type="text" name="aluno_id" placeholder="Novo ID do Aluno" required>
                 <input type="text" name="disciplina_id" placeholder="Novo ID da Disciplina" required>

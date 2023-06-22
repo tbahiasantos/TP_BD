@@ -31,7 +31,7 @@
     {% for professor in professores %}
         <li>
             {{ professor[1] }} ({{ professor[2] }}) - {{ professor[3] }} - {{ professor[4] }} - {{ professor[5] }}
-            <a href="/remover_professor/{{ professor[0] }}">Remover</a>
+            <a href="/remover_professor/{{ professor[0] }}">Remover</a><br>
             <form action="/atualizar_professor/{{ professor[0] }}" method="post" style="display: inline-block;">
                 <input type="text" name="nome" placeholder="Nome" required>
                 <input type="email" name="email" placeholder="Email" required>
