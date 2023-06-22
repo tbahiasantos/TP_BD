@@ -1,0 +1,95 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1D68FA6B-4CD7-B63C-7139-E9D937904068" name="ALUNO">
+<createdBy>tbahi</createdBy>
+<createdTime>2023-06-21 22:17:47 UTC</createdTime>
+<ownerDesignName>db_model</ownerDesignName>
+<ordsAlias>table_1</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="35772B06-8C47-8309-5F2E-A16D8EE060F9">
+<createdBy>tbahi</createdBy>
+<createdTime>2023-06-21 22:26:13 UTC</createdTime>
+<ownerDesignName>db_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOME" id="196B057F-07EA-0A8D-4CC4-07BEB2382B1D">
+<createdBy>tbahi</createdBy>
+<createdTime>2023-06-21 22:27:01 UTC</createdTime>
+<ownerDesignName>db_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EMAIL" id="DF5230AA-A167-7261-77EC-8A5E1FE73F01">
+<createdBy>tbahi</createdBy>
+<createdTime>2023-06-21 22:27:22 UTC</createdTime>
+<ownerDesignName>db_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CURSO" id="2EF48861-4116-0B1A-0DBB-73152F6388C7">
+<createdBy>tbahi</createdBy>
+<createdTime>2023-06-21 23:29:38 UTC</createdTime>
+<ownerDesignName>db_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DATA_NASCIMENTO" id="B0A2A8FD-AC04-8CC2-F0AA-C7652CA89E12">
+<createdBy>tbahi</createdBy>
+<createdTime>2023-06-21 22:27:48 UTC</createdTime>
+<ownerDesignName>db_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ENDERECO" id="F3281622-7B0D-5FCC-46A2-C41428182893">
+<createdBy>tbahi</createdBy>
+<createdTime>2023-06-21 22:27:56 UTC</createdTime>
+<ownerDesignName>db_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A924220E-940D-B3B9-BF39-F238B33C0261" name="ALUNO_PK">
+<createdBy>tbahi</createdBy>
+<createdTime>2023-06-21 22:26:13 UTC</createdTime>
+<ownerDesignName>db_model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="35772B06-8C47-8309-5F2E-A16D8EE060F9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

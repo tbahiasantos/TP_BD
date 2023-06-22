@@ -1,0 +1,83 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1ADD09A2-0F5C-34F4-B163-A58B5AA3B5CF" name="PROFESSOR">
+<createdBy>tbahi</createdBy>
+<createdTime>2023-06-21 22:32:32 UTC</createdTime>
+<ownerDesignName>db_model</ownerDesignName>
+<ordsAlias>table_3</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="B1F85ADC-B20A-83B2-3D26-030701502CD3">
+<createdBy>tbahi</createdBy>
+<createdTime>2023-06-21 22:33:09 UTC</createdTime>
+<ownerDesignName>db_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOME" id="A296C4C8-1DB0-219F-EE40-82095A4E0C1A">
+<createdBy>tbahi</createdBy>
+<createdTime>2023-06-21 22:33:28 UTC</createdTime>
+<ownerDesignName>db_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DEPARTAMENTO" id="28DF775A-554E-E11C-6C0E-434940A894BB">
+<createdBy>tbahi</createdBy>
+<createdTime>2023-06-21 22:35:22 UTC</createdTime>
+<ownerDesignName>db_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EMAIL" id="EFA493B9-9C77-EC5B-682F-622859E88F75">
+<createdBy>tbahi</createdBy>
+<createdTime>2023-06-21 22:34:19 UTC</createdTime>
+<ownerDesignName>db_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DATA_NASCIMENTO" id="1E9289B8-ACC2-E9E5-F8E4-8C7009E2CDA6">
+<createdBy>tbahi</createdBy>
+<createdTime>2023-06-21 22:34:00 UTC</createdTime>
+<ownerDesignName>db_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6CB372EA-973C-3C24-FFFC-3C054A4E0BE7" name="PROFESSOR_PK">
+<createdBy>tbahi</createdBy>
+<createdTime>2023-06-21 22:34:04 UTC</createdTime>
+<ownerDesignName>db_model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B1F85ADC-B20A-83B2-3D26-030701502CD3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

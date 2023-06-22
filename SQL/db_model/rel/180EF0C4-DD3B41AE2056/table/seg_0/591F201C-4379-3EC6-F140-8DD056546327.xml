@@ -1,0 +1,99 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="591F201C-4379-3EC6-F140-8DD056546327" name="LECIONA">
+<createdBy>tbahi</createdBy>
+<createdTime>2023-06-21 23:20:25 UTC</createdTime>
+<ownerDesignName>db_model</ownerDesignName>
+<ordsAlias>table_9</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="PROFESSOR_ID" id="1DCF39B6-4D79-953C-ACAB-FE959ECBDECD">
+<createdBy>tbahi</createdBy>
+<createdTime>2023-06-21 23:20:52 UTC</createdTime>
+<ownerDesignName>db_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E24923EB-794C-3F26-F3CB-4CAEDDAF1B6E" referredColumn="B1F85ADC-B20A-83B2-3D26-030701502CD3"/>
+</associations>
+</Column>
+<Column name="DISCIPLINA_ID" id="AE67660D-C23C-797F-217C-11253E5D15C5">
+<createdBy>tbahi</createdBy>
+<createdTime>2023-06-21 23:20:57 UTC</createdTime>
+<ownerDesignName>db_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2C5122D5-C60A-EED5-1433-8207CBFD531B" referredColumn="53F4945D-987D-8A69-B9F6-93AE59F9B6FE"/>
+</associations>
+</Column>
+<Column name="TURMA_ID" id="416C4AA5-507E-68F6-60D8-F0F19BD84331">
+<createdBy>tbahi</createdBy>
+<createdTime>2023-06-21 23:54:14 UTC</createdTime>
+<ownerDesignName>db_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FE8B0E1B-B517-1862-E248-4624095EE107" referredColumn="54EE0852-2032-EB4C-5CBE-5DFBA390C401"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="26DF0C4A-5D0B-3A9B-6501-243A1A96FD2D" name="LECIONA_PK">
+<createdBy>tbahi</createdBy>
+<createdTime>2023-06-21 23:23:10 UTC</createdTime>
+<ownerDesignName>db_model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1DCF39B6-4D79-953C-ACAB-FE959ECBDECD"/>
+<colUsage columnID="AE67660D-C23C-797F-217C-11253E5D15C5"/>
+<colUsage columnID="416C4AA5-507E-68F6-60D8-F0F19BD84331"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DF371F82-7AA2-5EC4-11FE-AE89558E7A7A" name="LECIONA_PROFESSOR_FK">
+<createdBy>tbahi</createdBy>
+<createdTime>2023-06-21 23:20:52 UTC</createdTime>
+<ownerDesignName>db_model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1DCF39B6-4D79-953C-ACAB-FE959ECBDECD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="70252E2C-D886-67C5-4FA6-23B07C89FFE1" name="LECIONA_DISCIPLINA_FK">
+<createdBy>tbahi</createdBy>
+<createdTime>2023-06-21 23:20:57 UTC</createdTime>
+<ownerDesignName>db_model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AE67660D-C23C-797F-217C-11253E5D15C5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1D993F09-A3AC-C0AA-9B02-96D16087E3C6" name="LECIONA_TURMA_FK">
+<createdBy>tbahi</createdBy>
+<createdTime>2023-06-21 23:54:14 UTC</createdTime>
+<ownerDesignName>db_model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="416C4AA5-507E-68F6-60D8-F0F19BD84331"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

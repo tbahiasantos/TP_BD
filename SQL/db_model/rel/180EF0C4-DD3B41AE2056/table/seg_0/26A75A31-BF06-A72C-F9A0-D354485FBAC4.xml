@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="26A75A31-BF06-A72C-F9A0-D354485FBAC4" name="MATRICULA">
+<createdBy>tbahi</createdBy>
+<createdTime>2023-06-21 23:31:16 UTC</createdTime>
+<ownerDesignName>db_model</ownerDesignName>
+<ordsAlias>table_12</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ALUNO_ID" id="25FC23A4-0190-716E-471B-745E12F8C066">
+<createdBy>tbahi</createdBy>
+<createdTime>2023-06-21 23:31:29 UTC</createdTime>
+<ownerDesignName>db_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6B2AB075-7C29-F319-47E5-720721921E05" referredColumn="35772B06-8C47-8309-5F2E-A16D8EE060F9"/>
+</associations>
+</Column>
+<Column name="DISCIPLINA_ID" id="21FC358C-262A-A56D-B2A7-08E5CAAB4811">
+<createdBy>tbahi</createdBy>
+<createdTime>2023-06-22 15:08:56 UTC</createdTime>
+<ownerDesignName>db_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="66FA0DA9-B1CA-9D04-5D20-DBCED873E591" referredColumn="53F4945D-987D-8A69-B9F6-93AE59F9B6FE"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="5C54066B-957A-93E9-5695-48341643EE83" name="MATRICULA_PK">
+<createdBy>tbahi</createdBy>
+<createdTime>2023-06-21 23:32:02 UTC</createdTime>
+<ownerDesignName>db_model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="25FC23A4-0190-716E-471B-745E12F8C066"/>
+<colUsage columnID="21FC358C-262A-A56D-B2A7-08E5CAAB4811"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C50E8CC7-F6AC-4ACE-0EF4-FC579651DEDA" name="MATRICULA_ALUNO_FK">
+<createdBy>tbahi</createdBy>
+<createdTime>2023-06-21 23:31:29 UTC</createdTime>
+<ownerDesignName>db_model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="25FC23A4-0190-716E-471B-745E12F8C066"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DF45C0E2-B1F3-E372-2D6A-2D4FE11D4EFC" name="MATRICULA_DISCIPLINA_FK">
+<createdBy>tbahi</createdBy>
+<createdTime>2023-06-22 15:08:56 UTC</createdTime>
+<ownerDesignName>db_model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="21FC358C-262A-A56D-B2A7-08E5CAAB4811"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

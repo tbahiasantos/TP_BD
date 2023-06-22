@@ -1,0 +1,58 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B2F42029-3DA8-9026-1D79-9B1A6F5FE68D" name="DISCIPLINA">
+<createdBy>tbahi</createdBy>
+<createdTime>2023-06-21 22:35:43 UTC</createdTime>
+<ownerDesignName>db_model</ownerDesignName>
+<ordsAlias>table_5</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="53F4945D-987D-8A69-B9F6-93AE59F9B6FE">
+<createdBy>tbahi</createdBy>
+<createdTime>2023-06-21 22:36:29 UTC</createdTime>
+<ownerDesignName>db_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOME" id="569C3EEC-FC06-E228-DA20-29DA9FE6873D">
+<createdBy>tbahi</createdBy>
+<createdTime>2023-06-21 22:36:52 UTC</createdTime>
+<ownerDesignName>db_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CARGA_HORARIA" id="FDCF1A9A-EBD9-F8E6-3242-BE53360BEFFC">
+<createdBy>tbahi</createdBy>
+<createdTime>2023-06-21 22:36:52 UTC</createdTime>
+<ownerDesignName>db_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="EEDF7F4C-B245-4D89-6E7A-4C5B50122C79" name="DISCIPLINA_PK">
+<createdBy>tbahi</createdBy>
+<createdTime>2023-06-21 22:36:29 UTC</createdTime>
+<ownerDesignName>db_model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="53F4945D-987D-8A69-B9F6-93AE59F9B6FE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

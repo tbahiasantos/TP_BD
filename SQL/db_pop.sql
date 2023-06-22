@@ -1,0 +1,40 @@
+-- CADASTRAR ALUNO
+INSERT INTO ALUNO VALUES
+(1, 'Maria Silva', 'maria@example.com', 'Psicologia', TO_DATE('1995-06-10', 'YYYY/MM/DD'), 'Rua F');
+INSERT INTO ALUNO VALUES
+(2, 'Lucas Santos', 'lucas@example.com', 'Engenharia Civil', TO_DATE('1993-02-20', 'YYYY/MM/DD'), 'Rua G');
+INSERT INTO ALUNO VALUES
+(3, 'Pedro Oliveira', 'pedro@example.com', 'Medicina', TO_DATE('1992-07-15', 'YYYY/MM/DD'), 'Rua H');
+INSERT INTO ALUNO VALUES
+(4, 'Sara Costa', 'sara@example.com', 'Direito', TO_DATE('1991-05-25', 'YYYY/MM/DD'), 'Rua I');
+INSERT INTO ALUNO VALUES
+(5, 'Carlos Mendes', 'carlos@example.com', 'Letras', TO_DATE('1990-12-31', 'YYYY/MM/DD'), 'Rua J');
+
+-- CADASTRAR DISCIPLINA
+INSERT INTO DISCIPLINA VALUES (1, 'Banco de Dados', 60);
+INSERT INTO DISCIPLINA VALUES (2, 'Arquitetura e Organização de Computadores', 45);
+INSERT INTO DISCIPLINA VALUES (3, 'Linguagens de Programação', 90);
+
+-- CADASTRAR ALUNO EM DISCIPLINA
+INSERT INTO MATRICULA VALUES (1, 1);
+INSERT INTO MATRICULA VALUES (1, 2);
+INSERT INTO MATRICULA VALUES (2, 1);
+INSERT INTO MATRICULA VALUES (3, 2);
+INSERT INTO MATRICULA VALUES (4, 1);
+INSERT INTO MATRICULA VALUES (5, 2);
+
+-- CADASTRAR PROFESSOR
+INSERT INTO PROFESSOR VALUES (1, 'João Silva', 'Departamento de Matemática', 'joao.silva@example.com', TO_DATE('1990-01-01', 'YYYY/MM/DD'));
+INSERT INTO PROFESSOR VALUES (2, 'Maria Santos', 'Departamento de História', 'maria.santos@example.com', TO_DATE('1988-07-12', 'YYYY/MM/DD'));
+INSERT INTO PROFESSOR VALUES (3, 'Carlos Oliveira', 'Departamento de Engenharia', 'carlos.oliveira@example.com', TO_DATE('1975-03-27', 'YYYY;MM/DD'));
+
+-- CADASTRAR TURMA
+INSERT INTO TURMA VALUES (1, 'A101', '08:00-10:00');
+INSERT INTO TURMA VALUES (2, 'C301', '14:00-16:00');
+
+-- CADASTRAR PROFESSOR EM DISCIPLINA
+INSERT INTO LECIONA VALUES (1, 2, 1);
+INSERT INTO LECIONA VALUES (1, 2, 2);
+INSERT INTO LECIONA VALUES (1, 3, 2);
+INSERT INTO LECIONA VALUES (2, 1, 2);
+INSERT INTO LECIONA VALUES (3, 3, 1);
