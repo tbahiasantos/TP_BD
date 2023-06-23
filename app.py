@@ -481,7 +481,7 @@ def atualizar_leciona(professor_id, disciplina_id, turma_id):
 # ----------------------------------------------------------------------------------------------------------------------
 
 # Junção Interna--------------------------------------------------------------------------------------------------------
-@app.route('/juncao-interna')
+@app.route('/juncao_interna')
 def juncao():
     # Conectando ao banco de dados
     conn = sqlite3.connect('sistema_de_matriculas.db')
@@ -501,7 +501,7 @@ def juncao():
     return render_template('juncao_interna.html', resultados=resultados)
 
 # Junção Externa--------------------------------------------------------------------------------------------------------
-@app.route('/juncao-externa')
+@app.route('/juncao_externa')
 def juncao_externa():
     # Conectando ao banco de dados
     conn = sqlite3.connect('sistema_de_matriculas.db')
@@ -524,7 +524,7 @@ def juncao_externa():
 # ----------------------------------------------------------------------------------------------------------------------
 
 # Sentença de grupo envolvendo as junções dos anteriores ---------------------------------------------------------------
-@app.route('/disciplinas-por-aluno')
+@app.route('/disciplinas_por_aluno')
 def disciplinas_por_aluno():
     # Conectando ao banco de dados
     conn = sqlite3.connect('sistema_de_matriculas.db')
@@ -546,7 +546,7 @@ def disciplinas_por_aluno():
 # ----------------------------------------------------------------------------------------------------------------------
 
 # Sentença com a cláusula HAVING ---------------------------------------------------------------------------------------
-@app.route('/filtrar-disciplinas', methods=['GET', 'POST'])
+@app.route('/filtrar_disciplinas', methods=['GET', 'POST'])
 def filtrar_disciplinas():
     if request.method == 'POST':
         # Obter o valor mínimo fornecido pelo usuário no formulário
