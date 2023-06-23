@@ -478,8 +478,130 @@ def atualizar_leciona(professor_id, disciplina_id, turma_id):
 
     # Redirecionando de volta para a página inicial
     return redirect('/leciona')
+# ----------------------------------------------------------------------------------------------------------------------
 
+# Junção Interna--------------------------------------------------------------------------------------------------------
+@app.route('/juncao-interna')
+def juncao():
+    # Conectando ao banco de dados
+    conn = sqlite3.connect('sistema_de_matriculas.db')
+    cursor = conn.cursor()
+
+    # Executando a consulta de junção interna
+    cursor.execute("SELECT aluno.nome, aluno.email, disciplina.nome FROM aluno INNER JOIN matricula ON aluno.id = matricula.aluno_id "
+                   "INNER JOIN disciplina ON matricula.disciplina_id = disciplina.id")
+
+    # Obtendo os resultados da consulta
+    resultados = cursor.fetchall()
+
+    # Fechando a conexão com o banco de dados
+    conn.close()
+
+    # Renderizando o template juncao.html e passando os resultados da junção como argumento
+    return render_template('juncao_interna.html', resultados=resultados)
+
+# Junção Externa--------------------------------------------------------------------------------------------------------
+@app.route('/juncao-externa')
+def juncao_externa():
+    # Conectando ao banco de dados
+    conn = sqlite3.connect('sistema_de_matriculas.db')
+    cursor = conn.cursor()
+
+    # Executando a consulta de junção externa
+    cursor.execute("SELECT professor.nome, disciplina.nome, leciona.turma_id FROM professor "
+                   "LEFT JOIN leciona ON professor.id = leciona.professor_id "
+                   "LEFT JOIN disciplina ON leciona.disciplina_id = disciplina.id")
+
+    # Obtendo os resultados da consulta
+    resultados = cursor.fetchall()
+
+    # Fechando a conexão com o banco de dados
+    conn.close()
+
+    # Renderizando o template juncao_externa.html e passando os resultados da junção como argumento
+    return render_template('juncao_externa.html', resultados=resultados)
 
 # ----------------------------------------------------------------------------------------------------------------------
+
+# Sentença de grupo envolvendo as junções dos anteriores ---------------------------------------------------------------
+@app.route('/disciplinas-por-aluno')
+def disciplinas_por_aluno():
+    # Conectando ao banco de dados
+    conn = sqlite3.connect('sistema_de_matriculas.db')
+    cursor = conn.cursor()
+
+    # Executando a consulta para contar as disciplinas por aluno
+    cursor.execute("SELECT aluno.nome, COUNT(matricula.disciplina_id) FROM aluno "
+                   "LEFT JOIN matricula ON aluno.id = matricula.aluno_id GROUP BY aluno.nome")
+
+    # Obtendo os resultados da consulta
+    resultados = cursor.fetchall()
+
+    # Fechando a conexão com o banco de dados
+    conn.close()
+
+    # Renderizando o template disciplinas_por_aluno.html e passando os resultados como argumento
+    return render_template('disciplinas_por_aluno.html', resultados=resultados)
+
+# ----------------------------------------------------------------------------------------------------------------------
+
+# Sentença com a cláusula HAVING ---------------------------------------------------------------------------------------
+@app.route('/filtrar-disciplinas', methods=['GET', 'POST'])
+def filtrar_disciplinas():
+    if request.method == 'POST':
+        # Obter o valor mínimo fornecido pelo usuário no formulário
+        valor_minimo = int(request.form['valor_minimo'])
+
+        # Conectar ao banco de dados
+        conn = sqlite3.connect('sistema_de_matriculas.db')
+        cursor = conn.cursor()
+
+        # Executar a consulta filtrando as disciplinas pelo número mínimo de alunos matriculados
+        cursor.execute("SELECT disciplina.nome, COUNT(matricula.aluno_id) FROM disciplina "
+                       "LEFT JOIN matricula ON disciplina.id = matricula.disciplina_id "
+                       "GROUP BY disciplina.nome "
+                       "HAVING COUNT(matricula.aluno_id) >= ?", (valor_minimo,))
+
+        # Obter os resultados da consulta
+        resultados = cursor.fetchall()
+
+        # Fechar a conexão com o banco de dados
+        conn.close()
+
+        # Renderizar o template disciplinas_filtradas.html e passar os resultados e o valor mínimo como argumentos
+        return render_template('disciplinas_filtradas.html', resultados=resultados, valor_minimo=valor_minimo)
+
+    # Renderizar o template de formulário de filtragem
+    return render_template('filtrar_disciplinas.html')
+# ----------------------------------------------------------------------------------------------------------------------
+
+# Consulta com subconsulta ---------------------------------------------------------------------------------------------
+@app.route('/alunos_por_professor', methods=['GET', 'POST'])
+def alunos_por_professor():
+    if request.method == 'POST':
+        # Obter o ID do professor fornecido pelo usuário no formulário
+        professor_id = int(request.form['professor_id'])
+
+        # Conectar ao banco de dados
+        conn = sqlite3.connect('sistema_de_matriculas.db')
+        cursor = conn.cursor()
+
+        # Executar a consulta usando uma subconsulta para obter os nomes dos alunos
+        cursor.execute("SELECT aluno.nome FROM aluno WHERE aluno.id IN (SELECT matricula.aluno_id FROM matricula LEFT JOIN leciona ON matricula.disciplina_id = leciona.disciplina_id WHERE leciona.professor_id = ?)", (professor_id,))
+
+        # Obter os resultados da consulta
+        resultados = cursor.fetchall()
+
+        # Fechar a conexão com o banco de dados
+        conn.close()
+
+        # Renderizar o template alunos_por_professor.html e passar os resultados e o ID do professor como argumentos
+        return render_template('alunos_por_professor.html', resultados=resultados, professor_id=professor_id)
+
+    # Renderizar o template de formulário para inserir o ID do professor
+    return render_template('informar_professor.html')
+
+# ----------------------------------------------------------------------------------------------------------------------
+
 if __name__ == '__main__':
     app.run()

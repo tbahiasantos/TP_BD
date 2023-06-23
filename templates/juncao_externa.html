@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sistema de Matrículas - Junção Externa</title>
+</head>
+<body>
+    <h1>Junção Externa - Professores, Disciplinas e Turmas Lecionadas</h1>
+
+    <table>
+        <tr>
+            <th>Nome do Professor</th>
+            <th>Nome da Disciplina</th>
+            <th>ID da Turma</th>
+        </tr>
+        {% for resultado in resultados %}
+        <tr>
+            <td>{{ resultado[0] }}</td>
+            <td>{{ resultado[1] }}</td>
+            <td>{{ resultado[2] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
+
+
