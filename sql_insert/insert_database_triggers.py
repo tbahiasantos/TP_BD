@@ -4,7 +4,7 @@ import sqlite3
 conn = sqlite3.connect('../sistema_de_matriculas.db')
 cursor = conn.cursor()
 
-# Gatilho para verificar matrículas duplicadas
+# (1) Gatilho para verificar matrículas duplicadas
 cursor.execute('''
     CREATE TRIGGER IF NOT EXISTS check_existing_matricula
     BEFORE INSERT ON matricula
@@ -21,7 +21,7 @@ cursor.execute('''
     END;
 ''')
 
-# Gatilho que impede a modificação do nome de um aluno
+# (2) Gatilho que impede a modificação do nome de um aluno
 cursor.execute("""
     CREATE TRIGGER IF NOT EXISTS bloqueio_nome_aluno_before
     BEFORE UPDATE ON aluno
@@ -33,7 +33,7 @@ cursor.execute("""
     END;
 """)
 
-# Gatilho para verificar a idade dos alunos cadastrados
+# (3) Gatilho para verificar a idade dos alunos cadastrados
 cursor.execute("""
     CREATE TRIGGER IF NOT EXISTS verificar_idade_aluno
     BEFORE INSERT ON aluno
@@ -50,7 +50,7 @@ cursor.execute("""
     END;
 """)
 
-# Gatilho que impede a inserção de disciplinas com menos de 30 horas
+# (4) Gatilho que impede a inserção de disciplinas com menos de 30 horas
 cursor.execute("""
     CREATE TRIGGER IF NOT EXISTS verificar_carga_horaria_disciplina
     BEFORE INSERT ON disciplina
@@ -60,6 +60,21 @@ cursor.execute("""
         SELECT CASE
             WHEN NEW.nome IS NOT NULL THEN
                 RAISE(ABORT, 'A carga horária mínima de uma disciplina é de 30 horas.')
+            ELSE
+                RAISE(IGNORE)
+        END;
+    END;
+""")
+
+# (5) Gatilho que impede a remoção de uma linha da tabela "leciona"
+cursor.execute("""
+    CREATE TRIGGER IF NOT EXISTS bloquear_remocao_leciona
+    BEFORE DELETE ON leciona
+    FOR EACH ROW
+    BEGIN
+        SELECT CASE
+            WHEN OLD.professor_id IS NOT NULL THEN
+                RAISE(ABORT, 'Não é permitido remover linhas da tabela "leciona".')
             ELSE
                 RAISE(IGNORE)
         END;
