@@ -524,6 +524,7 @@ def juncao_externa():
 # ----------------------------------------------------------------------------------------------------------------------
 
 # Sentença de grupo envolvendo as junções dos anteriores ---------------------------------------------------------------
+# Página mostrando quantas disciplinas cada aluno faz
 @app.route('/disciplinas_por_aluno')
 def disciplinas_por_aluno():
     # Conectando ao banco de dados
