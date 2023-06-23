@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Sistema de Matrículas</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <h1>Alunos</h1>
@@ -28,7 +29,7 @@
 
     <h2>Alunos Cadastrados</h2>
     <ul>
-    {% for aluno in alunos %}
+        {% for aluno in alunos %}
         <li>
             {{ aluno[1] }} ({{ aluno[2] }}) - {{ aluno[3] }} - {{ aluno[4] }} - {{ aluno[5] }}
             <a href="/remover/{{ aluno[0] }}">Remover</a><br>
@@ -41,7 +42,7 @@
                 <input type="submit" value="Atualizar">
             </form>
         </li>
-    {% endfor %}
+        {% endfor %}
     </ul>
 </body>
 </html>
