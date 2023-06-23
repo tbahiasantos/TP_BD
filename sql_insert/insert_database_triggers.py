@@ -35,19 +35,35 @@ cursor.execute("""
 
 # Gatilho para verificar a idade dos alunos cadastrados
 cursor.execute("""
-CREATE TRIGGER IF NOT EXISTS verificar_idade_aluno
-BEFORE INSERT ON aluno
-FOR EACH ROW
-WHEN NEW.data_nascimento IS NOT NULL
-BEGIN
-    -- Verifica se a idade é menor que a idade mínima permitida
-    SELECT CASE
-        WHEN (CAST((strftime('%Y', 'now') - strftime('%Y', NEW.data_nascimento)) AS INTEGER) < 18) THEN
-            RAISE(ABORT, 'Idade mínima não atingida. Alunos devem ter pelo menos 18 anos.')
-        ELSE
-            NULL
+    CREATE TRIGGER IF NOT EXISTS verificar_idade_aluno
+    BEFORE INSERT ON aluno
+    FOR EACH ROW
+    WHEN NEW.data_nascimento IS NOT NULL
+    BEGIN
+        -- Verifica se a idade é menor que a idade mínima permitida
+        SELECT CASE
+            WHEN (CAST((strftime('%Y', 'now') - strftime('%Y', NEW.data_nascimento)) AS INTEGER) < 18) THEN
+                RAISE(ABORT, 'Idade mínima não atingida. Alunos devem ter pelo menos 18 anos.')
+            ELSE
+                NULL
+        END;
     END;
-END;
+""")
+
+# Gatilho que impede a inserção de disciplinas com menos de 30 horas
+cursor.execute("""
+    CREATE TRIGGER IF NOT EXISTS verificar_carga_horaria_disciplina
+    BEFORE INSERT ON disciplina
+    FOR EACH ROW
+    WHEN NEW.carga_horaria < 30
+    BEGIN
+        SELECT CASE
+            WHEN NEW.nome IS NOT NULL THEN
+                RAISE(ABORT, 'A carga horária mínima de uma disciplina é de 30 horas.')
+            ELSE
+                RAISE(IGNORE)
+        END;
+    END;
 """)
 
 # Confirmando as alterações e fechando a conexão
