@@ -1,7 +1,7 @@
 import sqlite3
 
 # Conecta ao banco de dados SQLite
-conn = sqlite3.connect('sistema_de_matriculas.db')
+conn = sqlite3.connect('../sistema_de_matriculas.db')
 
 # Cria um cursor
 cursor = conn.cursor()
