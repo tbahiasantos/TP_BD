@@ -50,13 +50,15 @@ cursor.execute('''CREATE TABLE leciona (
                     FOREIGN KEY (turma_id) REFERENCES turma (id)
                 )''')
 
-# Criando a tabela "matricula"
-cursor.execute('''CREATE TABLE matricula (
-                    aluno_id INTEGER,
-                    disciplina_id INTEGER,
-                    FOREIGN KEY (aluno_id) REFERENCES aluno (id),
-                    FOREIGN KEY (disciplina_id) REFERENCES disciplina (id)
-                )''')
+cursor.execute("""
+    CREATE TABLE matricula (
+        aluno_id INTEGER,
+        disciplina_id INTEGER,
+        FOREIGN KEY (aluno_id) REFERENCES aluno (id),
+        FOREIGN KEY (disciplina_id) REFERENCES disciplina (id),
+        PRIMARY KEY (aluno_id, disciplina_id)
+    );
+""")
 
 # Salvando as alterações e fechando a conexão
 conn.commit()

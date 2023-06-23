@@ -34,14 +34,14 @@ input[type="date"] {
 
 input[type="submit"] {
     padding: 5px 10px;
-    background-color: #555;
+    background-color: #004eff;
     color: #fff;
     border: none;
     cursor: pointer;
 }
 
 input[type="submit"]:hover {
-    background-color: #333;
+    background-color: #004eff;
 }
 
 ul {
@@ -55,7 +55,7 @@ li {
 }
 
 a {
-    color: #555;
+    color: #004eff;
     text-decoration: none;
     margin-left: 10px;
 }
