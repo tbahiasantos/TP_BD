@@ -21,7 +21,7 @@ cursor.execute('''
     END;
 ''')
 
-#  Gatilho que impede a modificação do nome de um aluno
+# Gatilho que impede a modificação do nome de um aluno
 cursor.execute("""
     CREATE TRIGGER IF NOT EXISTS bloqueio_nome_aluno_before
     BEFORE UPDATE ON aluno
@@ -31,6 +31,23 @@ cursor.execute("""
         UPDATE aluno SET nome = OLD.nome WHERE id = OLD.id;
         SELECT RAISE(ABORT, 'Modificação do nome de aluno não permitida');
     END;
+""")
+
+# Gatilho para verificar a idade dos alunos cadastrados
+cursor.execute("""
+CREATE TRIGGER IF NOT EXISTS verificar_idade_aluno
+BEFORE INSERT ON aluno
+FOR EACH ROW
+WHEN NEW.data_nascimento IS NOT NULL
+BEGIN
+    -- Verifica se a idade é menor que a idade mínima permitida
+    SELECT CASE
+        WHEN (CAST((strftime('%Y', 'now') - strftime('%Y', NEW.data_nascimento)) AS INTEGER) < 18) THEN
+            RAISE(ABORT, 'Idade mínima não atingida. Alunos devem ter pelo menos 18 anos.')
+        ELSE
+            NULL
+    END;
+END;
 """)
 
 # Confirmando as alterações e fechando a conexão
