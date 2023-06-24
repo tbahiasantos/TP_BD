@@ -488,7 +488,8 @@ def juncao():
     cursor = conn.cursor()
 
     # Executando a consulta de junção interna
-    cursor.execute("SELECT aluno.nome, aluno.email, disciplina.nome FROM aluno INNER JOIN matricula ON aluno.id = matricula.aluno_id "
+    cursor.execute("SELECT aluno.nome, aluno.email, disciplina.nome FROM aluno "
+                   "INNER JOIN matricula ON aluno.id = matricula.aluno_id "
                    "INNER JOIN disciplina ON matricula.disciplina_id = disciplina.id")
 
     # Obtendo os resultados da consulta
@@ -588,7 +589,10 @@ def alunos_por_professor():
         cursor = conn.cursor()
 
         # Executar a consulta usando uma subconsulta para obter os nomes dos alunos
-        cursor.execute("SELECT aluno.nome FROM aluno WHERE aluno.id IN (SELECT matricula.aluno_id FROM matricula LEFT JOIN leciona ON matricula.disciplina_id = leciona.disciplina_id WHERE leciona.professor_id = ?)", (professor_id,))
+        cursor.execute("SELECT aluno.nome FROM aluno WHERE aluno.id IN "
+                       "(SELECT matricula.aluno_id FROM matricula "
+                       "LEFT JOIN leciona ON matricula.disciplina_id = leciona.disciplina_id "
+                       "WHERE leciona.professor_id = ?)", (professor_id,))
 
         # Obter os resultados da consulta
         resultados = cursor.fetchall()
